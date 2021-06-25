@@ -14,6 +14,8 @@ set ( filters_files
       BlackList.h
       DifferenceCheck.cc
       DifferenceCheck.h
+      PracticalDifferenceCheck.cc
+      PracticalDifferenceCheck.h
       FilterBase.cc
       FilterBase.h
       FilterParametersBase.h

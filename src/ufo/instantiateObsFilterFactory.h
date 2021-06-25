@@ -16,6 +16,7 @@
 #include "ufo/filters/BayesianBackgroundQCFlags.h"
 #include "ufo/filters/BlackList.h"
 #include "ufo/filters/DifferenceCheck.h"
+#include "ufo/filters/PracticalDifferenceCheck.h"
 #include "ufo/filters/Gaussian_Thinning.h"
 #include "ufo/filters/gnssroonedvarcheck/GNSSROOneDVarCheck.h"
 #include "ufo/filters/HistoryCheck.h"
@@ -73,6 +74,8 @@ template<typename OBS> void instantiateObsFilterFactory() {
            BayesianBackgroundCheckMaker("Bayesian Background Check");
   static oops::FilterMaker<OBS, oops::ObsFilter<OBS, ufo::DifferenceCheck> >
            differenceCheckMaker("Difference Check");
+  static oops::FilterMaker<OBS, oops::ObsFilter<OBS, ufo::PracticalDifferenceCheck> >
+         practicalDifferenceCheckMaker("Practical Difference Check");
   static oops::FilterMaker<OBS, oops::ObsFilter<OBS, ufo::HistoryCheck> >
            historyCheckMaker("History Check");
   static oops::FilterMaker<OBS, oops::ObsFilter<OBS, ufo::ModelObThreshold> >
